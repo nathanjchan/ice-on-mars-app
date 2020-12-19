@@ -1,0 +1,22 @@
+{
+  "name": "Ice on Mars",
+  "description": "Finding near-surface ice on Mars from radar images using computer vision and machine learning",
+  "image": "heroku/python",
+  "repository": "https://github.com/nathanjchan/ice-on-mars-app",
+  "keywords": ["python", "django" ],
+  "addons": [ "heroku-postgresql" ],
+  "env": {
+    "SECRET_KEY": {
+      "description": "The secret key for the Django application.",
+      "generator": "secret"
+    }
+  },
+  "environments": {
+    "test": {
+      "scripts": {
+        "test-setup": "python manage.py collectstatic --noinput",
+        "test": "python manage.py test"
+      }
+    }
+  }
+}
