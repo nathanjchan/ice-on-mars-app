@@ -21,9 +21,9 @@ def db(request):
 
 def search(request):
     if request.method == "POST":
-        longitude = request.POST.get("longitude", None)
-        latitude = request.POST.get("latitude", None)
-        total = int(longitude + latitude)
+        longitude = float(request.POST.get("longitude", None))
+        latitude = float(request.POST.get("latitude", None))
+        total = longitude + latitude
         if total < 10:
             html = "<html><body>Your search button worked, and the total is less than 10.</body></html>"
             return HttpResponse(html)
