@@ -21,17 +21,18 @@ def db(request):
 
 def search(request):
     if request.method == "POST":
-        longitude = float(request.POST.get("longitude", None))
-        latitude = float(request.POST.get("latitude", None))
-        total = longitude + latitude
-        if total < 10:
-            html = "<html><body>Your search button worked, and the total is less than 10.</body></html>"
+        try:
+            longitude = float(request.POST.get("longitude", None))
+            latitude = float(request.POST.get("latitude", None))
+            total = longitude + latitude
+            if total < 10:
+                html = "<html><body>The total is less than 10.</body></html>"
+                return HttpResponse(html)
+            else:
+                html = "<html><body>The total is 10 or more.</body></html>"
+                return HttpResponse(html)
+        except:
+            html = "<html><body>There was some error.</body></html>"
             return HttpResponse(html)
-        elif total >= 10:
-            html = "<html><body>Your search button worked, and the total is 10 or more.</body></html>"
-            return HttpResponse(html)
-        else:
-            html = "<html><body>Your search button worked, but there was no total.</body></html>"
-            return HttpResponse(html)
-    html = "<html><body>Your search button worked, but nothing happened.</body></html>"
+    html = "<html><body>Nothing happened.</body></html>"
     return HttpResponse(html)
