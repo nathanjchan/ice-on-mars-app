@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.contrib import messages
 
 from .models import Greeting
 
@@ -26,12 +25,13 @@ def search(request):
         latitude = request.POST.get("latitude", None)
         total = longitude + latitude
         if total < 10:
-            messages.info(request, "Your search button worked, and the total is less than 10.")
-            return render(request, "index.html")
+            html = "<html><body>Your search button worked, and the total is less than 10.</body></html>"
+            return HttpResponse(html)
         elif total >= 10:
-            messages.info(request, "Your search button worked, and the total is 10 or more.")
-            return render(request, "index.html")
+            html = "<html><body>Your search button worked, and the total is 10 or more.</body></html>"
+            return HttpResponse(html)
         else:
-            messages.info(request, "Your search button worked, but there was no total.")
-            return render(request, "index.html")
-    return render(request, "index.html")
+            html = "<html><body>Your search button worked, but there was no total.</body></html>"
+            return HttpResponse(html)
+    html = "<html><body>Your search button worked, but nothing happened.</body></html>"
+    return HttpResponse(html)
