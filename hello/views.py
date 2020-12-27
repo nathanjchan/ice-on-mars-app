@@ -5,7 +5,6 @@ from .models import Greeting
 
 import numpy as np
 import pandas as pd
-import math
 
 # Create your views here.
 def index(request):
@@ -23,6 +22,10 @@ def db(request):
     return render(request, "db.html", {"greetings": greetings})
 
 
+def distance(x1, y1, x2, y2):
+    return np.sqrt(np.sum((x1-x2)**2 + (y1-y2)**2))
+
+
 def search(request):
     if request.method == "POST":
         longitude = float(request.POST.get("longitude", None))
@@ -37,7 +40,7 @@ def search(request):
         min_long = 0
         min_lat = 0
         for index, row in df.iterrows():
-            dist = math.dist([longitude, latitude], [row["center_long"], row["center_lat"]])
+            dist = distance([longitude, latitude], [row["center_long"], row["center_lat"]])
             if dist < min_dist:
                 min_dist = dist
                 min_tif = row["tif"]
