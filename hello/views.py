@@ -64,7 +64,7 @@ def search(request):
             "<p>which is ", str(min_dist), " units away from {longitude: ", str(longitude), ", latitude: ", str(latitude), "}.</p>",
             depth_message,
             "<p>The image is from the Geosciences Node of the NASA Planetary Data System.</p>"
-            '<p><img src="', min_jpg, '" alt="radar image"></p>',
+            '<p><img src="', min_jpg, '" alt="radar image" height="900"></p>',
             "</center></body><html>"
         ]
         html = "".join(html_list)

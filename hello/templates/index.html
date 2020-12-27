@@ -25,11 +25,11 @@
   <form method="POST" action="search">
     {% csrf_token %}
     <h3>
-      Longitude of Mars: <input type="number" id="longitude" name="longitude" placeholder="longitude" min="0" max="360" size="50" required/>
+      Longitude of Mars: <input type="number" id="longitude" name="longitude" min="0" max="360" size="50" required/>
     </h3>
 
     <h3>
-      Latitude of Mars: <input type="number" id="latitude" name="latitude" placeholder="latitude" min="-90" max="90" size="50" required/>
+      Latitude of Mars: <input type="number" id="latitude" name="latitude" min="-90" max="90" size="50" required/>
     </h3>
 
     <button type="submit">Search</button>
