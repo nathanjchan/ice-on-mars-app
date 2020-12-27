@@ -40,7 +40,7 @@ def search(request):
         min_long = 0
         min_lat = 0
         for index, row in df.iterrows():
-            dist = distance([longitude, latitude], [row["center_long"], row["center_lat"]])
+            dist = distance(longitude, latitude, row["center_long"], row["center_lat"])
             if dist < min_dist:
                 min_dist = dist
                 min_tif = row["tif"]
