@@ -56,15 +56,17 @@ def search(request):
             depth_message = "".join(['<p>According to the model from <a href="https://doi.org/10.1029/2019GL083947">Piqueux et al. 2019</a>, there is ice ', str(min_depth), " cm under the surface at this location.</p>"])
 
         html_list = [
+            "<html><body>",
             '{% extends "base.html" %}{% load static %}{% block content %}',
-            "<html><body><center>",
+            "<center>",
             "<p>Here is a radar image at {longitude: ", str(min_long), ", latitude: ", str(min_lat), "},</p>",
             "<p>which is ", str(round(min_dist, 2)), " units away from {longitude: ", str(longitude), ", latitude: ", str(latitude), "}.</p>",
             depth_message,
             '<p>The image is from the <a href="https://pds-geosciences.wustl.edu/">Geosciences Node of the NASA Planetary Data System</a>.</p>',
             '<p><img src="', min_jpg, '" alt="radar image" height="900"></p>',
-            "</center></body><html>",
-            "{% endblock %}"
+            "</center>",
+            "{% endblock %}",
+            "</body><html>",
         ]
         html = "".join(html_list)
         return HttpResponse(html)
