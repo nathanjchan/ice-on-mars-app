@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.shortcuts import redirect
 from django.http import HttpResponse
 
 from .models import Greeting
@@ -57,7 +58,7 @@ def search(request):
 
         html_list = [
             "<html><body>",
-            "<center>",
+            "<style> h1 {text-align: center;} h2 {text-align: center;} p {text-align: center;} </style>"
             '<img src="https://ice-on-mars.herokuapp.com/static/mars.jpg" alt="mars" height="100">',
             "<h1>Ice on Mars</h1>",
             "<h2>Finding near-surface ice on Mars from radar images</h2>"
@@ -67,8 +68,9 @@ def search(request):
             '<p>The image is from the <a href="https://pds-geosciences.wustl.edu/">Geosciences Node of the NASA Planetary Data System</a>.</p>',
             '<p><a href="https://ice-on-mars.herokuapp.com/">Home</a></p>',
             '<p><img src="', min_jpg, '" alt="radar image" height="900"></p>',
-            "</center>",
             "</body><html>",
         ]
         html = "".join(html_list)
         return HttpResponse(html)
+    else:
+        return redirect("index")
