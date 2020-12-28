@@ -5,3 +5,11 @@ var latitudeValue = document.getElementById("latitudeValue");
 
 longitudeValue.innerHTML = longitudeSlider.value;
 latitudeValue.innerHTML = latitudeSlider.value;
+
+longitudeSlider.oninput = function() {
+    longitudeValue.innerHTML = this.value;
+}
+
+latitudeSlider.oninput = function() {
+    latitudeValue.innerHTML = this.value;
+}

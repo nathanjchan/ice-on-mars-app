@@ -21,6 +21,10 @@
     h4 {
       text-align: center;
     }
+
+    .slider {
+      width: 33%;
+    }
   </style>
   <form method="POST" action="search">
     {% csrf_token %}
@@ -30,10 +34,10 @@
 
       <input type="range" id="longitudeSlider" name="longitudeSlider" min="0" max="360"></input>
       <label for="longitudeSlider">Longitude of Mars: </label><span id="longitudeValue">0</span>
-
+      <br>
       <input type="range" id="latitudeSlider" name="latitudeSlider" min="-90" max="90"></input>
-      <label for="latitudeSlider">Latitude of Mars</label><span id="latitudeValue">0</span>
-
+      <label for="latitudeSlider">Latitude of Mars: </label><span id="latitudeValue">0</span>
+      <br>
       <p><button id="searchButton" type="submit" class="btn btn-lg btn-default"><span
             class="glyphicon glyphicon-flash"></span> Find Ice!</button></p>
     </h3>
