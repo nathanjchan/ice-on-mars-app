@@ -59,7 +59,7 @@ def search(request):
         html_list = [
             "<html><body>",
             "<style> h1 {text-align: center;} h2 {text-align: center;} p {text-align: center;} </style>"
-            '<img src="https://ice-on-mars.herokuapp.com/static/mars.jpg" alt="mars" height="100">',
+            '<p><img src="https://ice-on-mars.herokuapp.com/static/mars.jpg" alt="mars" height="100"></p>',
             "<h1>Ice on Mars</h1>",
             "<h2>Finding near-surface ice on Mars from radar images</h2>"
             "<p>Here is a SHARAD radar image at {longitude: ", str(min_long), ", latitude: ", str(min_lat), "},</p>",
