@@ -1,8 +1,10 @@
-function startSearch() {
-    var text = document.getElementById("searching");
-    if (text.style.display == "none") {
-      text.style.display = "block";
+var searchButton = document.getElementById("searchButton");
+var searchText = document.getElementById("searchText");
+
+searchButton.onclick = function() {
+    if (searchText.style.display == "none") {
+      searchText.style.display = "block";
     } else {
-      text.style.display = "none";
+      searchText.style.display = "none";
     }
   }

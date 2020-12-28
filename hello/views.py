@@ -57,15 +57,14 @@ def search(request):
 
         html_list = [
             "<html><body>",
-            '{% extends "base.html" %}{% load static %}{% block content %}',
             "<center>",
             "<p>Here is a radar image at {longitude: ", str(min_long), ", latitude: ", str(min_lat), "},</p>",
             "<p>which is ", str(round(min_dist, 2)), " units away from {longitude: ", str(longitude), ", latitude: ", str(latitude), "}.</p>",
             depth_message,
             '<p>The image is from the <a href="https://pds-geosciences.wustl.edu/">Geosciences Node of the NASA Planetary Data System</a>.</p>',
             '<p><img src="', min_jpg, '" alt="radar image" height="900"></p>',
+            '<p><a href="https://ice-on-mars.herokuapp.com/">Home</a></p>',
             "</center>",
-            "{% endblock %}",
             "</body><html>",
         ]
         html = "".join(html_list)
