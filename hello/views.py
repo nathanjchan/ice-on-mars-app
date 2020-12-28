@@ -58,8 +58,8 @@ def search(request):
         html_list = [
             "<html><body>",
             "<center>",
-            "<p>Here is a radar image at {longitude: ", str(min_long), ", latitude: ", str(min_lat), "},</p>",
-            "<p>which is ", str(round(min_dist, 2)), " units away from {longitude: ", str(longitude), ", latitude: ", str(latitude), "}.</p>",
+            "<p>Here is a SHARAD radar image at {longitude: ", str(min_long), ", latitude: ", str(min_lat), "},</p>",
+            "<p>which is ", str(round(min_dist, 2)), " units away from the requested coordinates {longitude: ", str(longitude), ", latitude: ", str(latitude), "}.</p>",
             depth_message,
             '<p>The image is from the <a href="https://pds-geosciences.wustl.edu/">Geosciences Node of the NASA Planetary Data System</a>.</p>',
             '<p><a href="https://ice-on-mars.herokuapp.com/">Home</a></p>',

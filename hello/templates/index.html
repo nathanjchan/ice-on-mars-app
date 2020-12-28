@@ -14,22 +14,22 @@
         class="glyphicon glyphicon-flash"></span> Original Analysis Source Code</a>
     <a type="button" class="btn btn-lg btn-primary" href="https://github.com/nathanjchan/ice-on-mars-app"><span
         class="glyphicon glyphicon-link"></span> GitHub for this website</a>-->
-    <form method="POST" action="search">
-      {% csrf_token %}
-      <h3>
-        Longitude of Mars: <input type="number" id="longitude" name="longitude" min="0" max="360" required />
-      </h3>
-
-      <h3>
-        Latitude of Mars: <input type="number" id="latitude" name="latitude" min="-90" max="90" required />
-      </h3>
-
-      <button id="searchButton" type="submit">Search</button>
-      <p id="searchText" style="display: none">Searching...</p>
-    </form>
   </div>
 </div>
 <div class="container">
+  <form method="POST" action="search">
+    {% csrf_token %}
+    <h3>
+      Longitude of Mars: <input type="number" id="longitude" name="longitude" min="0" max="360" required />
+    </h3>
+
+    <h3>
+      Latitude of Mars: <input type="number" id="latitude" name="latitude" min="-90" max="90" required />
+    </h3>
+
+    <button id="searchButton" type="submit">Search</button>
+    <p id="searchText" style="display: none">Searching...</p>
+  </form>
   <!--<div class="alert alert-info text-center" role="alert">
     This web app is a work in progress.
   </div>-->
@@ -81,5 +81,5 @@
     This web app is a work in progress.
   </div> -->
 </div>
-<script src="javascripts/search.js"></script>
+<script src="{% static 'search.js'%}"></script>
 {% endblock %}
