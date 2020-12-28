@@ -51,13 +51,14 @@ def search(request):
                 min_jpg = "".join(["https://pds-geosciences.wustl.edu/mro/mro-m-sharad-5-radargram-v1/mrosh_2001/browse/thm/", min_tif, "thm.jpg"])
 
         if min_depth == -32768:
-            depth_message = '<p>According to the model from <a href="https://doi.org/10.1029/2019GL083947">Piqueux et al. 2019</a>, there is no ice on this location.</p>'
+            depth_message = '<p>According to the model from <a href="https://doi.org/10.1029/2019GL083947">Piqueux et al. 2019</a>, <b>there is no ice on this location</b>.</p>'
         else:
-            depth_message = "".join(['<p>According to the model from <a href="https://doi.org/10.1029/2019GL083947">Piqueux et al. 2019</a>, there is ice ', str(min_depth), " cm under the surface at this location.</p>"])
+            depth_message = "".join(['<p>According to the model from <a href="https://doi.org/10.1029/2019GL083947">Piqueux et al. 2019</a>, <b>there is ice ', str(min_depth), " cm under the surface at this location</b>.</p>"])
 
         html_list = [
             "<html><body>",
             "<center>",
+            '<img src="https://ice-on-mars.herokuapp.com/static/mars.jpg" alt="mars" height="100">',
             "<h1>Ice on Mars</h1>",
             "<h2>Finding near-surface ice on Mars from radar images</h2>"
             "<p>Here is a SHARAD radar image at {longitude: ", str(min_long), ", latitude: ", str(min_lat), "},</p>",
