@@ -21,33 +21,29 @@
     h4 {
       text-align: center;
     }
-
-    .slidecontainer {
-      width: 33%;
-    }
   </style>
   <form method="POST" action="search">
     {% csrf_token %}
     <!--<p>Longitude of Mars: <input type="number" id="longitude" name="longitude" min="0" max="360" required /></p>-->
     <!--<p>Latitude of Mars: <input type="number" id="latitude" name="latitude" min="-90" max="90" required /></p>-->
-    <div class="slidercontainer">
+    <div class="sliderContainer">
       <h3>
-        <p>Longitude of Mars: </p><span id="longitudeValue">0</span>
+        <p>Longitude of Mars:</p><span id="longitudeValue">0</span>
       </h3>
       <input type="range" id="longitudeSlider" name="longitudeSlider" min="0" max="360"></input>
 
       <h3>
-        <p>Latitude of Mars: </p><span id="latitudeValue">0</span>
+        <p>Latitude of Mars:</p><span id="latitudeValue">0</span>
       </h3>
       <input type="range" id="latitudeSlider" name="latitudeSlider" min="-90" max="90"></input>
     </div>
+    <h4>
+      <p id="searchText" style="display: none">Searching...</p>
+    </h4>
     <h3>
       <p><button id="searchButton" type="submit" class="btn btn-lg btn-default"><span
             class="glyphicon glyphicon-flash"></span> Find Ice!</button></p>
     </h3>
-    <h4>
-      <p id="searchText" style="display: none">Searching...</p>
-    </h4>
   </form>
 </div>
 <script src="{% static 'search.js'%}"></script>
