@@ -25,8 +25,8 @@ def db(request):
 
 def search(request):
     if request.method == "POST":
-        longitude = int(request.POST.get("longitude", None))
-        latitude = int(request.POST.get("latitude", None))
+        longitude = int(request.POST.get("longitudeValue", None))
+        latitude = int(request.POST.get("latitudeValue", None))
 
         df = pd.read_csv("https://github.com/nathanjchan/ice-on-mars/raw/master/radar2.csv")
         df = df.drop(columns="Unnamed: 0")
