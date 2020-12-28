@@ -52,9 +52,9 @@ def search(request):
                 min_jpg = "".join(["https://pds-geosciences.wustl.edu/mro/mro-m-sharad-5-radargram-v1/mrosh_2001/browse/thm/", min_tif, "thm.jpg"])
 
         if min_depth == -32768:
-            depth_message = '<p>According to the model from <a href="https://doi.org/10.1029/2019GL083947">Piqueux et al. 2019</a>, <b>there is no ice on this location</b>.</p>'
+            depth_message = '<p>According to the model from <a href="https://doi.org/10.1029/2019GL083947">Piqueux et al. 2019</a>, <b><i>there is no ice on this location</i></b>.</p>'
         else:
-            depth_message = "".join(['<p>According to the model from <a href="https://doi.org/10.1029/2019GL083947">Piqueux et al. 2019</a>, <b>there is ice ', str(min_depth), " cm under the surface at this location</b>.</p>"])
+            depth_message = "".join(['<p>According to the model from <a href="https://doi.org/10.1029/2019GL083947">Piqueux et al. 2019</a>, <b><i>there is ice ', str(min_depth), " cm under the surface at this location</i></b>.</p>"])
 
         html_list = [
             "<html><body>",
@@ -63,7 +63,7 @@ def search(request):
             "<h1>Ice on Mars</h1>",
             "<h2>Finding near-surface ice on Mars from radar images</h2>"
             "<p>Here is a SHARAD radar image at {longitude: ", str(min_long), ", latitude: ", str(min_lat), "},</p>",
-            "<p>which is ", str(round(min_dist, 2)), " units away from the requested coordinates {longitude: ", str(longitude), ", latitude: ", str(latitude), "}.</p>",
+            "<p>which is ", str(round(min_dist, 2)), " units away from {longitude: ", str(longitude), ", latitude: ", str(latitude), "}.</p>",
             depth_message,
             '<p>The image is from the <a href="https://pds-geosciences.wustl.edu/">Geosciences Node of the NASA Planetary Data System</a>.</p>',
             '<p><a href="https://ice-on-mars.herokuapp.com/">Home</a></p>',
