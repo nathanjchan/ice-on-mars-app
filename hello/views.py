@@ -70,7 +70,7 @@ def search(request):
             <p><img src="https://ice-on-mars.herokuapp.com/static/mars.jpg" alt="mars" height="100"></p>
             <h1>Ice on Mars</h1>
             <h2>Finding near-surface ice on Mars from radar images</h2>
-            <div class="container" style="position: relative; text-align: center; color: white; max-width: 1140px;">
+            <div class="container" style="position: relative; text-align: center; color: white; max-width: 1140px; margin: 0 auto;">
             <img src="https://mars.nasa.gov/system/resources/detail_files/24729_PIA23518-Mars-landing-sites-web.jpg" alt="mars map" style="width:100%;">
             """,
             '<div class="x" id="x" style="position: absolute; top: ', str(x_style_top), '%; left: ', str(x_style_left), '%; transform: translate(-50%, -60%);"><h3>x</h3></div></div>',
