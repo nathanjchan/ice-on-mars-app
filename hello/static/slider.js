@@ -14,8 +14,10 @@ x.style.transform = "translate(-50%, -50%)";
 
 longitudeSlider.oninput = function() {
     longitudeValue.innerHTML = this.value;
+    x.style.left = (((this.value - 180) / 360) * 100) + "%";
 }
 
 latitudeSlider.oninput = function() {
     latitudeValue.innerHTML = this.value;
+    x.style.top = (((this.value + 90) / 180) * 100) + "%";
 }
