@@ -71,7 +71,7 @@ def search(request):
             <h1>Ice on Mars</h1>
             <h2>Finding near-surface ice on Mars from radar images</h2>
             <div class="container" style="position: relative; text-align: center; color: white;">
-            <img src="https://mars.nasa.gov/system/resources/detail_files/24729_PIA23518-Mars-landing-sites-web.jpg" alt="mars map" style="width:100%;">
+            <img src="https://mars.nasa.gov/system/resources/detail_files/24729_PIA23518-Mars-landing-sites-web.jpg" alt="mars map" height="570">
             """,
             '<div class="x" id="x" style="position: absolute; top: ', str(x_style_top), '%; left: ', str(x_style_left), '%; transform: translate(-50%, -60%);"><h3>x</h3></div></div>',
             "<p>Here is a SHARAD radar image at {longitude: ", str(min_long), ", latitude: ", str(min_lat), "},</p>",
