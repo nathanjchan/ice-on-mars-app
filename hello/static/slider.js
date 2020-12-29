@@ -16,7 +16,8 @@ longitudeSlider.oninput = function() {
     longitudeValue.innerHTML = this.value;
     if (this.value > 180) {
         x.style.left = ((this.value - 180) / 360) * 100 + "%";
-    } else {
+    }
+    if (this.value <= 180) {
         x.style.left = ((this.value + 180) / 360) * 100 + "%";
     }
 }
