@@ -57,11 +57,11 @@ def search(request):
             depth_message = "".join(['<p>According to the model from <a href="https://doi.org/10.1029/2019GL083947">Piqueux et al. (2019)</a>, <b><i>there is ice ', str(min_depth), " cm under the surface at this location</i></b>.</p>"])
 
         if longitude > 180:
-            x_style_left = ((longitude - 180) / 360) * 100
+            x_style_left = ((min_long - 180) / 360) * 100
         else:
-            x_style_left = ((longitude + 180) / 360) * 100
+            x_style_left = ((min_long + 180) / 360) * 100
 
-        x_style_top = (-(latitude - 90) / 180) * 100
+        x_style_top = (-(min_lat - 90) / 180) * 100
 
         html_list = [
             """
@@ -73,7 +73,7 @@ def search(request):
             <div class="container" style="position: relative; text-align: center; color: white; max-width: 1140px; margin: 0 auto;">
             <img src="https://mars.nasa.gov/system/resources/detail_files/24729_PIA23518-Mars-landing-sites-web.jpg" alt="mars map" style="width:100%;">
             """,
-            '<div class="x" id="x" style="position: absolute; top: ', str(x_style_top), '%; left: ', str(x_style_left), '%; transform: translate(-50%, -60%);"><h3>x</h3></div></div>',
+            '<div class="x" id="x" style="position: absolute; top: ', str(x_style_top), '%; left: ', str(x_style_left), '%; transform: translate(-50%, -55%); text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;"><h1>X</h1></div></div>',
             "<p>Here is a SHARAD radar image at {longitude: ", str(min_long), ", latitude: ", str(min_lat), "},</p>",
             "<p>which is ", str(round(min_dist, 2)), " units away from {longitude: ", str(longitude), ", latitude: ", str(latitude), "}.</p>",
             depth_message,
