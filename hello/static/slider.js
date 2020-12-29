@@ -15,14 +15,13 @@ x.style.transform = "translate(-50%, -60%)";
 longitudeSlider.oninput = function() {
     longitudeValue.innerHTML = this.value;
     if (this.value > 180) {
-        x.style.left = ((this.value - 180) / 360) * 100 + "%";
-    }
-    if (this.value <= 180) {
-        x.style.left = ((this.value + 180) / 360) * 100 + "%";
+        x.style.left = ((Number(this.value) - 180) / 360) * 100 + "%";
+    } else {
+        x.style.left = ((Number(this.value) + 180) / 360) * 100 + "%";
     }
 }
 
 latitudeSlider.oninput = function() {
     latitudeValue.innerHTML = this.value;
-    x.style.top = (-(this.value - 90) / 180) * 100 + "%";
+    x.style.top = (-(Number(this.value) - 90) / 180) * 100 + "%";
 }
