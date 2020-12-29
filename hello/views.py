@@ -56,12 +56,24 @@ def search(request):
         else:
             depth_message = "".join(['<p>According to the model from <a href="https://doi.org/10.1029/2019GL083947">Piqueux et al. (2019)</a>, <b><i>there is ice ', str(min_depth), " cm under the surface at this location</i></b>.</p>"])
 
+        if longitude > 180:
+            x_style_left = ((longitude - 180) / 360) * 100
+        else:
+            x_style_left = ((longitude + 180) / 360) * 100
+
+        x_style_top = (-(latitude - 90) / 180) * 100
+
         html_list = [
-            "<html><body>",
-            "<style> h1 {text-align: center;} h2 {text-align: center;} p {text-align: center;} </style>"
-            '<p><img src="https://ice-on-mars.herokuapp.com/static/mars.jpg" alt="mars" height="100"></p>',
-            "<h1>Ice on Mars</h1>",
-            "<h2>Finding near-surface ice on Mars from radar images</h2>"
+            """
+            <html><body>
+            <style> h1 {text-align: center;} h2 {text-align: center;} p {text-align: center;} </style>
+            <p><img src="https://ice-on-mars.herokuapp.com/static/mars.jpg" alt="mars" height="100"></p>
+            <h1>Ice on Mars</h1>
+            <h2>Finding near-surface ice on Mars from radar images</h2>
+            <div class="container" style="position: relative; text-align: center; color: white;">
+            <img src="https://mars.nasa.gov/system/resources/detail_files/24729_PIA23518-Mars-landing-sites-web.jpg" alt="mars map" style="width:100%;">
+            """,
+            '<div class="x" id="x" style="position: absolute; top: ', x_style_top, '%; left: ', x_style_left, '%; transform: translate(-50%, -60%);"><h3>x</h3></div></div>',
             "<p>Here is a SHARAD radar image at {longitude: ", str(min_long), ", latitude: ", str(min_lat), "},</p>",
             "<p>which is ", str(round(min_dist, 2)), " units away from {longitude: ", str(longitude), ", latitude: ", str(latitude), "}.</p>",
             depth_message,
