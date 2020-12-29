@@ -8,8 +8,8 @@ latitudeValue.innerHTML = latitudeSlider.value;
 
 var x = document.getElementById("x");
 x.style.position = "absolute";
-x.style.top = "50%";
-x.style.left = "50%";
+x.style.top = (((latitudeSlider.value + 90) / 180) * 100) + "%";
+x.style.left = (((longitudeSlider.value - 180) / 360) * 100) + "%";
 x.style.transform = "translate(-50%, -50%)";
 
 longitudeSlider.oninput = function() {
