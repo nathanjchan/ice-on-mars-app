@@ -6,11 +6,11 @@ var latitudeValue = document.getElementById("latitudeValue");
 longitudeValue.innerHTML = longitudeSlider.value;
 latitudeValue.innerHTML = latitudeSlider.value;
 
-var x = document.getElementsByClassName("x");
-x.style.position = "absolute"
-x.style.top = "50%"
-x.style.bottom = "50%"
-x.style.transform = "translate(-50%, -50%)"
+var x = document.getElementById("x");
+x.style.position = "absolute";
+x.style.top = "50%";
+x.style.bottom = "50%";
+x.style.transform = "translate(-50%, -50%)";
 
 longitudeSlider.oninput = function() {
     longitudeValue.innerHTML = this.value;
