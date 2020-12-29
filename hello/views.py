@@ -73,7 +73,7 @@ def search(request):
             <div class="container" style="position: relative; text-align: center; color: white;">
             <img src="https://mars.nasa.gov/system/resources/detail_files/24729_PIA23518-Mars-landing-sites-web.jpg" alt="mars map" style="width:100%;">
             """,
-            '<div class="x" id="x" style="position: absolute; top: ', x_style_top, '%; left: ', x_style_left, '%; transform: translate(-50%, -60%);"><h3>x</h3></div></div>',
+            '<div class="x" id="x" style="position: absolute; top: ', str(x_style_top), '%; left: ', str(x_style_left), '%; transform: translate(-50%, -60%);"><h3>x</h3></div></div>',
             "<p>Here is a SHARAD radar image at {longitude: ", str(min_long), ", latitude: ", str(min_lat), "},</p>",
             "<p>which is ", str(round(min_dist, 2)), " units away from {longitude: ", str(longitude), ", latitude: ", str(latitude), "}.</p>",
             depth_message,
