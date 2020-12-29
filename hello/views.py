@@ -52,9 +52,9 @@ def search(request):
                 min_jpg = "".join(["https://pds-geosciences.wustl.edu/mro/mro-m-sharad-5-radargram-v1/mrosh_2001/browse/thm/", min_tif, "thm.jpg"])
 
         if min_depth == -32768:
-            depth_message = '<p>According to the model from <a href="https://doi.org/10.1029/2019GL083947">Piqueux et al. 2019</a>, <b><i>there is no ice on this location</i></b>.</p>'
+            depth_message = '<p>According to the model from <a href="https://doi.org/10.1029/2019GL083947">Piqueux et al. (2019)</a>, <b><i>there is no ice on this location</i></b>.</p>'
         else:
-            depth_message = "".join(['<p>According to the model from <a href="https://doi.org/10.1029/2019GL083947">Piqueux et al. 2019</a>, <b><i>there is ice ', str(min_depth), " cm under the surface at this location</i></b>.</p>"])
+            depth_message = "".join(['<p>According to the model from <a href="https://doi.org/10.1029/2019GL083947">Piqueux et al. (2019)</a>, <b><i>there is ice ', str(min_depth), " cm under the surface at this location</i></b>.</p>"])
 
         html_list = [
             "<html><body>",
