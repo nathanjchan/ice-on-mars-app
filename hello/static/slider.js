@@ -6,7 +6,7 @@ var latitudeValue = document.getElementById("latitudeValue");
 longitudeValue.innerHTML = longitudeSlider.value;
 latitudeValue.innerHTML = latitudeSlider.value;
 
-var x = document.getElementById("x");
+var x = document.getElementsByClassName("x");
 x.style.position = "absolute"
 x.style.top = "50%"
 x.style.bottom = "50%"
